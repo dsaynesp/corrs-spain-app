@@ -4,13 +4,9 @@ import streamlit as st
 
 import pandas as pd
 
-import hvplot.pandas
 import hvplot.xarray
-import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import holoviews as hv
-import geoviews as gv
-import geoviews.feature as gf
 import cartopy.crs as ccrs
 import cartopy.io.shapereader as shpreader
 import geopandas as gpd
