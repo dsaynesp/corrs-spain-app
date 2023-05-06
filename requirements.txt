@@ -1,3 +1,4 @@
+geos
 Cartopy==0.21.1
 geopandas==0.12.2
 geoviews==1.9.6
