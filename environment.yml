@@ -10,5 +10,3 @@ dependencies:
   - matplotlib-base=3.7.1
   - pandas=2.0.1
   - pip
-  - pip:
-    - streamlit==1.22.0
