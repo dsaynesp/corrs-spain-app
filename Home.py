@@ -2,10 +2,8 @@
 
 import streamlit as st
 
-import numpy as np
 import pandas as pd
 
-import xarray as xr
 import hvplot.pandas
 import hvplot.xarray
 import matplotlib.pyplot as plt
