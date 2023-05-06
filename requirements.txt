@@ -1,9 +1,0 @@
-geos
-Cartopy==0.21.1
-geopandas==0.12.2
-geoviews==1.9.6
-holoviews==1.15.4
-hvplot==0.8.3
-matplotlib==3.7.1
-pandas==2.0.1
-streamlit==1.22.0
