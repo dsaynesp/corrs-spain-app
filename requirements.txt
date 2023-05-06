@@ -1,0 +1,8 @@
+Cartopy
+geopandas
+geoviews
+holoviews
+hvplot
+matplotlib
+pandas
+streamlit
