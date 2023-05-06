@@ -46,14 +46,11 @@ The data were provided by [AEMET](https://www.aemet.es/es/serviciosclimaticos/ca
 )
 
 # Set directories
-mainpath_data = 'D:/Thesis/App2/'
-
-# Open all netCDF files as a single file
-pp2020_ds = xr.open_dataset(mainpath_data+'data/2020.nc')
+mainpath_data = 'D:/Thesis/corrs-nonstat-spain-app/'
 
 # Extract the rotated pole parameters
-pole_lon = pp2020_ds.rotated_pole.attrs['grid_north_pole_longitude']
-pole_lat = pp2020_ds.rotated_pole.attrs['grid_north_pole_latitude']
+pole_lon = -186.0
+pole_lat = 49.5
 
 # Open the csv file that contains results of the non-stationarity analysis
 fpath_test = 'data/amax_pp_test_reduced4colab.csv'
