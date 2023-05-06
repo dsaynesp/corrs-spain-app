@@ -1,4 +1,3 @@
-shapely==2.0.1 --no-binary=shapely
 Cartopy==0.21.1 --no-binary=Cartopy
 geopandas==0.12.2
 geoviews==1.9.6
