@@ -1,7 +1,6 @@
 pyproj==3.5.0
-geoviews==1.9.6
-geoviews-core==1.9.6
 Cartopy==0.21.1
+geoviews
 xarray==2023.4.2
 geopandas==0.12.2
 holoviews==1.15.4
