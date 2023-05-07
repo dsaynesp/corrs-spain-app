@@ -39,16 +39,13 @@ The data were provided by [AEMET](https://www.aemet.es/es/serviciosclimaticos/ca
 '''
 )
 
-# Set directories
-mainpath_data = 'D:/Thesis/corrs-nonstat-spain-app/'
-
 # Extract the rotated pole parameters
 pole_lon = -186.0
 pole_lat = 49.5
 
 # Open the csv file that contains results of the non-stationarity analysis
 fpath_test = 'data/amax_pp_test_reduced4colab.csv'
-amax_pp_test_df = pd.read_csv(mainpath_data+fpath_test, sep=';', encoding='latin-1')
+amax_pp_test_df = pd.read_csv(fpath_test, sep=';', encoding='latin-1')
 
 nonstat_mk_orig_df = amax_pp_test_df[['rlon', 'rlat', 'lon', 'lat', 'nonstat_mk_orig']]
 nonstat_mk_orig_df = nonstat_mk_orig_df[nonstat_mk_orig_df['nonstat_mk_orig']!=0]
@@ -74,7 +71,7 @@ nonstat_mk_HR_BH_gdf = gpd.GeoDataFrame(nonstat_mk_HR_BH_df, geometry=gpd.points
 
 # Open the csv file that contains results of the teleconnection analysis on the NAO, EA, EAWR and SCA indices
 fpath_telec = 'data/amax_pp_telec_reduced4colab.csv'
-amax_pp_telec_df = pd.read_csv(mainpath_data+fpath_telec, sep=';', encoding='latin-1')
+amax_pp_telec_df = pd.read_csv(fpath_telec, sep=';', encoding='latin-1')
 
 # Convert the data frame to Xarray data set
 amax_pp_telec_df.set_index(['rlat', 'rlon'], inplace=True) # this will convert "rlat" and "rlon" to dimensions in the new dataset
@@ -82,15 +79,15 @@ amax_pp_telec_ds = amax_pp_telec_df.to_xarray()
 
 # Explore the shapefile that contains the catchment delimitations
 #input_fpath_catchment = 'data/demarcaciones_a_terrestres/DEMARTER_16_21_2013.shp'
-#catchments_init_proj = gpd.read_file(mainpath_data+input_fpath_catchment)
+#catchments_init_proj = gpd.read_file(input_fpath_catchment)
 
 # Explore the shapefile containing the rivers whose waters discharge into the Atlantinc Ocean
 #input_fpath_atlant_river = 'data/rioscomppfafs/A_RiosCompletosv2.shp'
-#atlant_rivers_init_proj = gpd.read_file(mainpath_data+input_fpath_atlant_river)
+#atlant_rivers_init_proj = gpd.read_file(input_fpath_atlant_river)
 
 # Explore the shapefile containing the rivers whose waters discharge into the Mediterranean Sea
 #input_fpath_medit_river = 'data/rioscomppfafs/M_RiosCompletosv2.shp'
-#medit_rivers_init_proj = gpd.read_file(mainpath_data+input_fpath_medit_river)
+#medit_rivers_init_proj = gpd.read_file(input_fpath_medit_river)
 
 # Reproject the data if necessary
 # This aims to standardize the information
