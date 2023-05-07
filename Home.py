@@ -4,6 +4,7 @@ import streamlit as st
 
 import pandas as pd
 
+import hvplot.pandas
 import hvplot.xarray
 import matplotlib.colors as mcolors
 import holoviews as hv
