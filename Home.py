@@ -134,7 +134,9 @@ countries = gpd.read_file(shpreader.natural_earth('50m', 'cultural', 'admin_0_co
 # rivers0 = rivers0_ETRS89_30N_proj.hvplot(geo=True, projection=ccrs.PlateCarree(), crs=ccrs.epsg(25830), color='royalblue', alpha=1)
 # rivers1 = rivers1_ETRS89_30N_proj.hvplot(geo=True, projection=ccrs.PlateCarree(), crs=ccrs.epsg(25830), color='royalblue', alpha=1)
 
-plot = (telec_lag0*nonstat_mk_HR*countries + telec_lag0*nonstat_mk_HR_BH*countries +
-        telec_lag1*nonstat_mk_HR*countries + telec_lag1*nonstat_mk_HR_BH*countries +
-        telec_lag2*nonstat_mk_HR*countries + telec_lag2*nonstat_mk_HR_BH*countries).cols(2)
+#plot = (telec_lag0*nonstat_mk_HR*countries + telec_lag0*nonstat_mk_HR_BH*countries +
+#        telec_lag1*nonstat_mk_HR*countries + telec_lag1*nonstat_mk_HR_BH*countries +
+#        telec_lag2*nonstat_mk_HR*countries + telec_lag2*nonstat_mk_HR_BH*countries).cols(2)
+plot=telec_lag0*nonstat_mk_HR*countries
+
 st.bokeh_chart(hv.render(plot, backend='bokeh'))# use_container_width=True
