@@ -6,11 +6,11 @@ import pandas as pd
 
 import hvplot.pandas
 import hvplot.xarray
-import matplotlib.colors as mcolors
+#import matplotlib.colors as mcolors
 import holoviews as hv
 import cartopy.crs as ccrs
-import cartopy.io.shapereader as shpreader
-import geopandas as gpd
+#import cartopy.io.shapereader as shpreader
+#import geopandas as gpd
 
 st.set_page_config(layout='wide')
 
