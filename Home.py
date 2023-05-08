@@ -66,7 +66,7 @@ telec_lag0 = amax_pp_telec_ds.hvplot.quadmesh(x='rlon', y='rlat', z='pearson_xco
                                          xlim=(-3, 8), ylim=(-4, 3), frame_width=400, frame_height=400, cmap='rainbow', clabel='Teleconnection code',
                                          features={'ocean': '50m', 'coastline': '50m'}, title='Lag-0', clim=(1, 15), tools=['hover'], hover_cols='all') # fontsize={'title': '10pt', 'ylabel': '5px', 'ticks': 20}
 
-countries = gpd.read_file(shpreader.natural_earth('50m', 'cultural', 'admin_0_countries')).hvplot(geo=True, color='none')
+#countries = gpd.read_file(shpreader.natural_earth('50m', 'cultural', 'admin_0_countries')).hvplot(geo=True, color='none')
 #countries = gpd.read_file('https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries_lakes.zip').hvplot(geo=True, color='none')
 
 
@@ -74,6 +74,6 @@ countries = gpd.read_file(shpreader.natural_earth('50m', 'cultural', 'admin_0_co
 # rivers0 = rivers0_ETRS89_30N_proj.hvplot(geo=True, projection=ccrs.PlateCarree(), crs=ccrs.epsg(25830), color='royalblue', alpha=1)
 # rivers1 = rivers1_ETRS89_30N_proj.hvplot(geo=True, projection=ccrs.PlateCarree(), crs=ccrs.epsg(25830), color='royalblue', alpha=1)
 
-plot = telec_lag0*countries
+plot = telec_lag0#*countries
 
 st.bokeh_chart(hv.render(plot, backend='bokeh'))# use_container_width=True
