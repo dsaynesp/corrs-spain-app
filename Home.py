@@ -103,13 +103,13 @@ amax_pp_telec_ds = amax_pp_telec_df.to_xarray()
 
 hv.extension('bokeh')
 
-cmap_nonstat = mcolors.ListedColormap(['blue', 'red', 'black'])
+#cmap_nonstat = mcolors.ListedColormap(['blue', 'red', 'black'])
 
-telec_lag0 = amax_pp_telec_ds.hvplot.quadmesh(x='rlon', y='rlat', z='pearson_xcorr_sig_lag0_aft', projection=ccrs.PlateCarree(), 
-                                         crs=ccrs.RotatedPole(pole_longitude=pole_lon, pole_latitude=pole_lat),
-                                         project=True, rasterize=True, 
-                                         xlim=(-3, 8), ylim=(-4, 3), frame_width=400, frame_height=400, cmap='rainbow', clabel='Teleconnection code',
-                                         features={'ocean': '50m', 'coastline': '50m'}, title='Lag-0', clim=(1, 15), tools=['hover'], hover_cols='all') # fontsize={'title': '10pt', 'ylabel': '5px', 'ticks': 20}
+#telec_lag0 = amax_pp_telec_ds.hvplot.quadmesh(x='rlon', y='rlat', z='pearson_xcorr_sig_lag0_aft', projection=ccrs.PlateCarree(), 
+#                                         crs=ccrs.RotatedPole(pole_longitude=pole_lon, pole_latitude=pole_lat),
+#                                         project=True, rasterize=True, 
+#                                         xlim=(-3, 8), ylim=(-4, 3), frame_width=400, frame_height=400, cmap='rainbow', clabel='Teleconnection code',
+#                                         features={'ocean': '50m', 'coastline': '50m'}, title='Lag-0', clim=(1, 15), tools=['hover'], hover_cols='all') # fontsize={'title': '10pt', 'ylabel': '5px', 'ticks': 20}
 
 #telec_lag1 = amax_pp_telec_ds.hvplot.quadmesh(x='rlon', y='rlat', z='pearson_xcorr_sig_lag1_aft', projection=ccrs.PlateCarree(), 
 #                                         crs=ccrs.RotatedPole(pole_longitude=pole_lon, pole_latitude=pole_lat), 
@@ -123,9 +123,9 @@ telec_lag0 = amax_pp_telec_ds.hvplot.quadmesh(x='rlon', y='rlat', z='pearson_xco
 #                                         xlim=(-3, 8), ylim=(-4, 3), frame_width=400, frame_height=400, cmap='rainbow', clabel='Teleconnection code',
 #                                         features={'ocean': '50m', 'coastline': '50m'}, title='Lag-2', clim=(1, 15), tools=['hover'], hover_cols='all')
 
-nonstat_mk_HR = nonstat_mk_HR_gdf.hvplot(geo=True, projection=ccrs.PlateCarree(), 
-                         crs=ccrs.RotatedPole(pole_longitude=pole_lon, pole_latitude=pole_lat), 
-                         c='nonstat_mk_HR', cmap=cmap_nonstat, alpha=0.6, hover_cols='all', use_index=False, colorbar=False)
+#nonstat_mk_HR = nonstat_mk_HR_gdf.hvplot(geo=True, projection=ccrs.PlateCarree(), 
+#                         crs=ccrs.RotatedPole(pole_longitude=pole_lon, pole_latitude=pole_lat), 
+#                         c='nonstat_mk_HR', cmap=cmap_nonstat, alpha=0.6, hover_cols='all', use_index=False, colorbar=False)
 
 #nonstat_mk_HR_BH = nonstat_mk_HR_BH_gdf.hvplot(geo=True, projection=ccrs.PlateCarree(), 
 #                         crs=ccrs.RotatedPole(pole_longitude=pole_lon, pole_latitude=pole_lat), 
@@ -140,6 +140,7 @@ countries = gpd.read_file(shpreader.natural_earth('50m', 'cultural', 'admin_0_co
 #plot = (telec_lag0*nonstat_mk_HR*countries + telec_lag0*nonstat_mk_HR_BH*countries +
 #        telec_lag1*nonstat_mk_HR*countries + telec_lag1*nonstat_mk_HR_BH*countries +
 #        telec_lag2*nonstat_mk_HR*countries + telec_lag2*nonstat_mk_HR_BH*countries).cols(2)
-plot=telec_lag0*nonstat_mk_HR*countries
+#plot=telec_lag0*nonstat_mk_HR*countries
+plot=countries
 
 st.bokeh_chart(hv.render(plot, backend='bokeh'))# use_container_width=True
